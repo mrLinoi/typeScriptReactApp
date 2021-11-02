@@ -1,26 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Accordion from "./components/Accordion/Accrodion";
 
+
+function hello() {
+    alert('hello it-incubator');
+}
+
+// hello();
+
+//function declaration
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    //что-то делает
+    //обязана вернуть JSX
+    console.log("App rendering")
+    return (
+        <div>
+            <AppTitle/>
+            <Rating/>
+            <Accordion/>
+        </div>
+    );
+}
+
+function AppTitle() {
+    console.log("AppTitle rendering")
+    return <>"This is APP component"</>;
+}
+
+function Rating() {
+    console.log("Rating rendering");
+    return (
+        <>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+        </>
+    );
+}
+
+function Star() {
+    console.log("Star rendering");
+    return (
+        <div>star</div>
+    );
 }
 
 export default App;
