@@ -1,13 +1,7 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accrodion";
-
-
-function hello() {
-    alert('hello it-incubator');
-}
-
-// hello();
+import {Rating} from "./components/Rating/Rating";
 
 //function declaration
 function App() {
@@ -16,36 +10,24 @@ function App() {
     console.log("App rendering")
     return (
         <div>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
+            Article 1
+            <Rating value={2}/>
+            <Accordion titleValue={"Menu"} collapsed={true}/>
+            <Accordion titleValue={"Users"} collapsed={false}/>
+            <Rating value={4}/>
         </div>
     );
 }
 
-function AppTitle() {
-    console.log("AppTitle rendering")
-    return <>"This is APP component"</>;
+type PageTitlePropsType = {
+    title: string
 }
 
-function Rating() {
-    console.log("Rating rendering");
-    return (
-        <>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </>
-    );
-}
-
-function Star() {
-    console.log("Star rendering");
-    return (
-        <div>star</div>
-    );
+function PageTitle(props: PageTitlePropsType) {
+    console.log("PageTitle rendering")
+    return <h1>{ props.title }</h1>;
 }
 
 export default App;
